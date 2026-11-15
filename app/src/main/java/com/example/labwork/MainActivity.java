@@ -72,5 +72,25 @@ public class MainActivity extends AppCompatActivity {
             intentas3.putExtra(EXTRA_TEKSTAS, ivestasTekstas);
             launcher3.launch(intentas3);
         });
+        Button btnSiusti = findViewById(R.id.btnSiusti);
+
+        // (vi) Neišreikštinis intentas su ACTION_SEND
+        btnSiusti.setOnClickListener(v -> {
+            Intent siuntimas = new Intent();
+            siuntimas.setAction(Intent.ACTION_SEND);
+            siuntimas.putExtra(Intent.EXTRA_TEXT, tvRezultatai.getText().toString());
+            siuntimas.setType("text/plain");
+            startActivity(Intent.createChooser(siuntimas, "Siųsti tekstą su rezultatais"));
+        });
+        // (viii) Jei programa atidaryta per "Siųsti" meniu – iškart parodom gautą tekstą
+        Intent gautas = getIntent();
+        if (Intent.ACTION_SEND.equals(gautas.getAction())
+                && "text/plain".equals(gautas.getType())) {
+            String tekstas = gautas.getStringExtra(Intent.EXTRA_TEXT);
+            if (tekstas != null) {
+                ivestasTekstas = tekstas;
+                tvRezultatai.setText(tekstas);
+            }
+        }
     }
 }
