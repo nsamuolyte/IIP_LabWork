@@ -36,6 +36,10 @@ public class MainActivity3 extends AppCompatActivity {
 
         // (iii) Žodžiai suskaičiuojami tik paspaudus mygtuką
         btnSkaiciuok.setOnClickListener(v -> tvSakinys.setText(rezultatas()));
+        // Mygtukas "Atgal" – veikia taip pat kaip ◁
+        Button btnAtgal = findViewById(R.id.btnAtgal);
+        btnAtgal.setOnClickListener(v ->
+                getOnBackPressedDispatcher().onBackPressed());
 
         // (iv) Paspaudus "Atgal" ◁ – rezultatas grąžinamas į 1 veiklą
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {

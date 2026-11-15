@@ -6,6 +6,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,9 +40,12 @@ public class MainActivity extends AppCompatActivity {
     // (2) registerForActivityResult() – laukia atsakymo iš 3 veiklos
     private final ActivityResultLauncher<Intent> launcher3 = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
-            result -> {
-                if (result.getResultCode() == RESULT_OK && result.getData() != null) {
-                    tvRezultatai.setText(result.getData().getStringExtra(EXTRA_REZULTATAS));
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                        tvRezultatai.setText(result.getData().getStringExtra(EXTRA_REZULTATAS));
+                    }
                 }
             });
 
