@@ -31,7 +31,7 @@ public class MainActivity2 extends AppCompatActivity {
         Button btnIvesti = findViewById(R.id.btnIvesti2);
 
         // Parodom anksčiau įvestą tekstą, kad būtų galima papildyti
-        String ankstesnis = getIntent().getStringExtra(MainActivity.EXTRA_TEKSTAS);
+        String ankstesnis = getIntent().getStringExtra(MainActivity1.EXTRA_TEKSTAS);
         if (ankstesnis != null) {
             etTekstas.setText(ankstesnis);
         }
@@ -50,7 +50,7 @@ public class MainActivity2 extends AppCompatActivity {
 
     private void grazintiIrBaigti() {
         Intent atsakymas = new Intent();
-        atsakymas.putExtra(MainActivity.EXTRA_TEKSTAS, etTekstas.getText().toString());
+        atsakymas.putExtra(MainActivity1.EXTRA_TEKSTAS, etTekstas.getText().toString());
         setResult(RESULT_OK, atsakymas);
         finish();
     }

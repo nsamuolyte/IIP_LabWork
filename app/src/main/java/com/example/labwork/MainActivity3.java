@@ -30,7 +30,7 @@ public class MainActivity3 extends AppCompatActivity {
         Button btnSkaiciuok = findViewById(R.id.btnSkaiciuok);
 
         // Gaunam sakinį iš 1 veiklos
-        sakinys = getIntent().getStringExtra(MainActivity.EXTRA_TEKSTAS);
+        sakinys = getIntent().getStringExtra(MainActivity1.EXTRA_TEKSTAS);
         if (sakinys == null) sakinys = "";
         tvSakinys.setText(sakinys);
 
@@ -46,7 +46,7 @@ public class MainActivity3 extends AppCompatActivity {
             @Override
             public void handleOnBackPressed() {
                 Intent atsakymas = new Intent();
-                atsakymas.putExtra(MainActivity.EXTRA_REZULTATAS, rezultatas());
+                atsakymas.putExtra(MainActivity1.EXTRA_REZULTATAS, rezultatas());
                 setResult(RESULT_OK, atsakymas);
                 finish();
             }

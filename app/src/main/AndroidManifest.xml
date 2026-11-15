@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LabWork">
         <activity
-            android:name=".MainActivity"
+            android:name=".MainActivity1"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
@@ -22,7 +22,9 @@
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
@@ -32,6 +34,11 @@
         <activity
             android:name=".MainActivity3"
             android:exported="false" />
+        <activity
+            android:name=".MeniuActivity"
+            android:exported="false"
+            android:theme="@style/Theme.LabWork"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
