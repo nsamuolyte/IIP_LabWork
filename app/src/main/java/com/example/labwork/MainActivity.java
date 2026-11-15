@@ -35,6 +35,14 @@ public class MainActivity extends AppCompatActivity {
                     tvRezultatai.setText(ivestasTekstas);
                 }
             });
+    // (2) registerForActivityResult() – laukia atsakymo iš 3 veiklos
+    private final ActivityResultLauncher<Intent> launcher3 = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                    tvRezultatai.setText(result.getData().getStringExtra(EXTRA_REZULTATAS));
+                }
+            });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +63,14 @@ public class MainActivity extends AppCompatActivity {
         btnIvesti.setOnClickListener(v -> {
             intentas2.putExtra(EXTRA_TEKSTAS, ivestasTekstas);
             launcher2.launch(intentas2);
+        });
+        Button btnSkaiciuoti = findViewById(R.id.btnSkaiciuoti);
+
+        intentas3 = new Intent(this, MainActivity3.class);
+
+        btnSkaiciuoti.setOnClickListener(v -> {
+            intentas3.putExtra(EXTRA_TEKSTAS, ivestasTekstas);
+            launcher3.launch(intentas3);
         });
     }
 }
