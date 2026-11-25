@@ -23,7 +23,7 @@
         <activity
             android:name=".MainActivity1"
             android:exported="true"
-            android:label="LAB 2"
+            android:label="@string/title_lab2"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
@@ -43,7 +43,7 @@
             android:name=".Lab3Activity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize"
-            android:label="LAB 3"/>
+            android:label="@string/title_lab3"/>
     </application>
 
 </manifest>

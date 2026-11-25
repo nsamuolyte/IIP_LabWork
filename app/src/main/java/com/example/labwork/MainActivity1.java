@@ -87,6 +87,15 @@ public class MainActivity1 extends AppCompatActivity {
             siuntimas.setType("text/plain");
             startActivity(Intent.createChooser(siuntimas, "Siųsti tekstą su rezultatais"));
         });
+        // Grįžimas į pagrindinį puslapį (meniu)
+        Button btnPagrPusl = findViewById(R.id.pagr_pusl);
+        btnPagrPusl.setOnClickListener(v -> {
+            Intent meniu = new Intent(this, MeniuActivity.class);
+            meniu.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(meniu);
+            finish();
+        });
+
         // (viii) Jei programa atidaryta per "Siųsti" meniu – iškart parodom gautą tekstą
         Intent gautas = getIntent();
         if (Intent.ACTION_SEND.equals(gautas.getAction())

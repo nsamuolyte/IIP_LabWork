@@ -1,5 +1,26 @@
 <resources>
     <string name="IIP_LAB_DARBAI">LabWork</string>
+
+    <!-- Meniu -->
+    <string name="meniu_pavadinimas">Išmaniųjų įrenginių programavimas\nNida Samuolytė</string>
+    <string name="meniu_lab2">Lab 2</string>
+    <string name="meniu_lab3">Lab 3</string>
+
+    <!-- Activity pavadinimai -->
+    <string name="title_lab2">LAB 2</string>
+    <string name="title_lab3">LAB 3</string>
+
+    <!-- LAB 3 -->
+    <string name="lab3_pavadinimas">Pavadinimas:</string>
+    <string name="lab3_pavadinimas_hint">Įveskite vardą ir pavardę</string>
+    <string name="lab3_padalinys">Padalinys:</string>
+    <string name="lab3_padalinys_hint">Pasirinkite iš sąrašo padalinį</string>
+    <string name="lab3_sudetingumas">Sudėtingumas:</string>
+    <string name="lab3_laikas">Laikas:</string>
+    <string name="lab3_data">Data:</string>
+    <string name="lab3_pasirinkite_miesta">Pasirinkite miestą</string>
+    <string name="lab3_registruoti">Registruoti</string>
+    <string name="lab3_saugoti">Saugoti</string>
     <string-array name="padaliniai">
         <item>Mechanikos fakultetas</item>
         <item>Elektronikos fakultetas</item>
