@@ -44,6 +44,8 @@ public class FiguruView extends View {
     private boolean piesiamApskritima = false;
     private boolean rodytiApskritima = false;
     private boolean buvoDuPirstai = false;
+
+    private boolean vienoPirstoRezimas = false;   // apskritimas piešiamas vienu pirštu
     private float x1, y1, x2, y2;   // dviejų pirštų koordinatės
 
     private RezultatoKlausytojas klausytojas;
@@ -62,6 +64,7 @@ public class FiguruView extends View {
         pirstuDazai.setColor(Color.LTGRAY);
 
         // Perbraukimo (fling) gestas – nauja figūra
+        // Perbraukimo (fling) ir ilgo paspaudimo gestai
         gestai = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
             @Override
             public boolean onDown(@NonNull MotionEvent e) {
@@ -75,6 +78,17 @@ public class FiguruView extends View {
                     naujaFigura();
                 }
                 return true;
+            }
+
+            // Ilgai palaikius vienu pirštu – pradedam piešti apskritimą
+            @Override
+            public void onLongPress(@NonNull MotionEvent e) {
+                vienoPirstoRezimas = true;
+                piesiamApskritima = true;
+                buvoDuPirstai = true;          // kad atleidus nepasikeistų figūra
+                x1 = x2 = e.getX();            // pirmas "pirštas" – čia, kur palaikyta
+                y1 = y2 = e.getY();
+                invalidate();
             }
         });
     }
@@ -101,7 +115,7 @@ public class FiguruView extends View {
         figurosTipas = naujasTipas;
 
         int mazesnis = Math.min(getWidth(), getHeight());
-        spindulys = mazesnis * (0.25f + atsitiktinis.nextFloat() * 0.28f);   // 12–40 % ekrano
+        spindulys = mazesnis * (0.25f + atsitiktinis.nextFloat() * 0.20f);   // 12–40 % ekrano
         kampas = atsitiktinis.nextFloat() * 360f;
         santykis = 0.3f + atsitiktinis.nextFloat() * 0.6f;
         figurosDazai.setColor(Color.rgb(atsitiktinis.nextInt(150),
@@ -177,14 +191,18 @@ public class FiguruView extends View {
         gestai.onTouchEvent(e);
 
         switch (e.getActionMasked()) {
+
+
             case MotionEvent.ACTION_DOWN:                 // 1 pirštas – figūra dingsta
                 rodytiFigura = false;
                 rodytiApskritima = false;
                 buvoDuPirstai = false;
+                vienoPirstoRezimas = false;
                 break;
 
             case MotionEvent.ACTION_POINTER_DOWN:         // 2 pirštas – pradedam piešti apskritimą
                 if (e.getPointerCount() == 2) {
+                    vienoPirstoRezimas = false;
                     buvoDuPirstai = true;
                     piesiamApskritima = true;
                     atnaujintiTaskus(e);
@@ -192,8 +210,13 @@ public class FiguruView extends View {
                 break;
 
             case MotionEvent.ACTION_MOVE:                 // pirštai juda – apskritimas keičiasi
-                if (piesiamApskritima && e.getPointerCount() >= 2) {
-                    atnaujintiTaskus(e);
+                if (piesiamApskritima) {
+                    if (vienoPirstoRezimas) {
+                        x2 = e.getX();                    // antras "pirštas" – ten, kur dabar pelė
+                        y2 = e.getY();
+                    } else if (e.getPointerCount() >= 2) {
+                        atnaujintiTaskus(e);
+                    }
                 }
                 break;
 
@@ -203,6 +226,8 @@ public class FiguruView extends View {
                     patikrinti();
                 }
                 break;
+
+
 
             case MotionEvent.ACTION_UP:                   // visi pirštai atleisti
             case MotionEvent.ACTION_CANCEL:
