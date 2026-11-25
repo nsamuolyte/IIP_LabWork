@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Lab6Activity">
+
+    <!-- ActionBar juosta -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#3F51B5"
+        android:theme="@style/ThemeOverlay.Material3.Dark.ActionBar" />
+
+    <!-- 1 TextView: čia rodomas laiko skirtumas -->
+    <TextView
+        android:id="@+id/tvPirmas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Hello World!"
+        android:textSize="20sp" />
+
+    <!-- 2 TextView: čia rodomas simbolių skaičius -->
+    <TextView
+        android:id="@+id/tvAntras"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Sveikas"
+        android:textSize="20sp" />
+
+    <!-- Išvedimo laukas: simboliai po vieną -->
+    <TextView
+        android:id="@+id/tvIsvedimas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="X"
+        android:textSize="40sp" />
+</LinearLayout>

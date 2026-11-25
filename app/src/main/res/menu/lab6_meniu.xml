@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- 1 meniu: baigia programos darbą (paslėptas po ⋮) -->
+    <item
+        android:id="@+id/meniuBaigti"
+        android:title="Baigti darbą"
+        app:showAsAction="never" />
+
+    <!-- 2 meniu: matomas ActionBar juostoje, turi submeniu -->
+    <item
+        android:id="@+id/meniuSkirtumas"
+        android:title="Nustatyti skirtumą"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/meniuValanduSkirtumas"
+                android:title="Valandų skirtumas" />
+        </menu>
+    </item>
+</menu>
