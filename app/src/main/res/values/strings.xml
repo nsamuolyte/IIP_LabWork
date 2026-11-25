@@ -64,5 +64,8 @@
     <string name="lab5_be_a_rezultatas">Teksto ilgis %2$d simbolių.\nTarp jų yra %3$d balsių.\nTarp jų yra %5$d mažųjų ir %4$d didžiųjų raidžių.</string>
 
     <string name="lab7_lygis">Akumuliatoriaus lygis: %1$d %%</string>
+
+    <string name="lab8_pavyko">Pavyko! Figūra: %1$.0f px, apskritimas: %2$.0f px</string>
+    <string name="lab8_nepavyko">Nepavyko. Figūra: %1$.0f px, apskritimas: %2$.0f px</string>
 </resources>
 
