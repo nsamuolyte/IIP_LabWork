@@ -59,7 +59,10 @@
         <item>Nieko nebus</item>
         <item>Rasi ko ieškai</item>
     </string-array>
+
     <string name="lab5_a_rezultatas">Tekste yra %2$d A raidės.</string>
     <string name="lab5_be_a_rezultatas">Teksto ilgis %2$d simbolių.\nTarp jų yra %3$d balsių.\nTarp jų yra %5$d mažųjų ir %4$d didžiųjų raidžių.</string>
+
+    <string name="lab7_lygis">Akumuliatoriaus lygis: %1$d %%</string>
 </resources>
 
