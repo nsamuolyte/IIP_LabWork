@@ -37,5 +37,10 @@ public class MeniuActivity extends AppCompatActivity {
 
         btnLab4.setOnClickListener(v ->
                 startActivity(new Intent(this, Lab4Activity.class)));
+
+        Button btnLab5 = findViewById(R.id.btnLab5);
+
+        btnLab5.setOnClickListener(v ->
+                startActivity(new Intent(this, Lab5Activity.class)));
     }
 }

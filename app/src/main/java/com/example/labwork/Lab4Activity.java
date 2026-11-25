@@ -19,8 +19,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class Lab4Activity extends AppCompatActivity {
-
-    // SharedPreferences failo ir rakto pavadinimai
     private static final String NUSTATYMAI = "lab4_nustatymai";
     private static final String RAKTAS_ADRESAS = "paskutinis_adresas";
 
