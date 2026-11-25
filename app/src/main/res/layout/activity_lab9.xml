@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Lab9Activity">
+
+    <Button
+        android:id="@+id/btnKoordinates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Įvesti koordinates" />
+
+    <AutoCompleteTextView
+        android:id="@+id/acVieta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:completionThreshold="1"
+        android:hint="Pasirinkite vietą"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:minHeight="48dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etIlguma"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Ilguma"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal|numberSigned"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/etPlatuma"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Platuma"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal|numberSigned"
+            android:minHeight="48dp" />
+    </LinearLayout>
+
+    <!-- OpenStreetMap žemėlapis -->
+    <org.osmdroid.views.MapView
+        android:id="@+id/zemelapis"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>

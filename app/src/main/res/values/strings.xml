@@ -67,5 +67,30 @@
 
     <string name="lab8_pavyko">Pavyko! Figūra: %1$.0f px, apskritimas: %2$.0f px</string>
     <string name="lab8_nepavyko">Nepavyko. Figūra: %1$.0f px, apskritimas: %2$.0f px</string>
+
+    <string-array name="lab9_vietos">
+        <item>VILNIUS TECH (VGTU)</item>
+        <item>Vilnius</item>
+        <item>Kaunas</item>
+        <item>Klaipėda</item>
+        <item>Šiauliai</item>
+        <item>Panevėžys</item>
+        <item>Paryžius</item>
+        <item>Londonas</item>
+        <item>Niujorkas</item>
+    </string-array>
+
+    <!-- ilguma,platuma – ta pačia tvarka kaip lab9_vietos -->
+    <string-array name="lab9_koordinates">
+        <item>25.3374,54.7222</item>
+        <item>25.2797,54.6872</item>
+        <item>23.9036,54.8985</item>
+        <item>21.1443,55.7033</item>
+        <item>23.3157,55.9349</item>
+        <item>24.3575,55.7348</item>
+        <item>2.3522,48.8566</item>
+        <item>-0.1276,51.5072</item>
+        <item>-74.0060,40.7128</item>
+    </string-array>
 </resources>
 
