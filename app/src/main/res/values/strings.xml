@@ -1,3 +1,23 @@
 <resources>
-    <string name="app_name">LabWork</string>
+    <string name="IIP_LAB_DARBAI">LabWork</string>
+    <string-array name="padaliniai">
+        <item>Mechanikos fakultetas</item>
+        <item>Elektronikos fakultetas</item>
+        <item>Informatikos fakultetas</item>
+        <item>Statybos fakultetas</item>
+        <item>Verslo vadybos fakultetas</item>
+        <item>Fundamentinių mokslų fakultetas</item>
+        <item>Mechanikos ir medžiagotyros laboratorija</item>
+    </string-array>
+
+    <string-array name="miestai">
+        <item>Akmenė</item>
+        <item>Alytus</item>
+        <item>Biržai</item>
+        <item>Kaunas</item>
+        <item>Klaipėda</item>
+        <item>Panevėžys</item>
+        <item>Šiauliai</item>
+        <item>Vilnius</item>
+    </string-array>
 </resources>

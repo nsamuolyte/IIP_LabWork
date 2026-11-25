@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#81C784"
+    tools:context=".Lab3Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- 1 ir 2: Pavadinimas ir Padalinys (TableLayout) -->
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shrinkColumns="1"
+            android:stretchColumns="1">
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@+id/etPavadinimas"
+                    android:text="Pavadinimas:"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/etPavadinimas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="name"
+                    android:hint="Įveskite vardą ir pavardę"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@+id/acPadalinys"
+                    android:text="Padalinys:"
+                    android:textSize="18sp" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/acPadalinys"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:completionThreshold="1"
+                    android:hint="Pasirinkite iš sąrašo padalinį"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:minHeight="48dp" />
+            </TableRow>
+        </TableLayout>
+
+        <!-- 3: RatingBar LinearLayout'e -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sudėtingumas:"
+                android:textSize="18sp" />
+
+            <RatingBar
+                android:id="@+id/rbSudetingumas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="4"
+                android:rating="1"
+                android:stepSize="1" />
+        </LinearLayout>
+
+        <!-- Skiriamoji linija -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:layout_marginVertical="8dp"
+            android:background="#1B5E20" />
+
+        <!-- 4 ir 5: Laikas ir Data (TableLayout) -->
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Laikas:"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Data:"
+                    android:textSize="18sp" />
+            </TableRow>
+
+            <TableRow>
+                <TimePicker
+                    android:id="@+id/tpLaikas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:timePickerMode="spinner" />
+
+                <DatePicker
+                    android:id="@+id/dpData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:calendarViewShown="false"
+                    android:datePickerMode="spinner" />
+            </TableRow>
+        </TableLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:layout_marginVertical="8dp"
+            android:background="#1B5E20" />
+
+        <!-- 6: Miestas (Spinner) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pasirinkite miestą"
+            android:textSize="18sp" />
+
+        <Spinner
+            android:id="@+id/spMiestas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00C853"
+            android:minHeight="48dp" />
+
+        <!-- 7 ir 8: Switch ir mygtukas -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/swRegistruoti"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registruoti" />
+
+            <Button
+                android:id="@+id/btnSaugoti"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:text="Saugoti" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
